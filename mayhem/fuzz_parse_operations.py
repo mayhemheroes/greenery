@@ -32,11 +32,16 @@ def TestOneInput(data):
                     regex_combo * greenery.Multiplier(greenery.Bound(fdp.ConsumeInt(1)), greenery.INF)
                 else:
                     regex_combo -= regex
+    except IndexError as e:
+        if random.random() < 0.01:
+            raise e
+        return -1
     except Exception as e:
         if 'Could not parse' in str(e):
             return -1
         if random.random() < 0.05:
             raise
+        return -1
 
 
 def main():

@@ -35,7 +35,7 @@ def TestOneInput(data):
     except Exception as e:
         if 'Could not parse' in str(e):
             return -1
-        if random.random() < 0.01:
+        if random.random() < 0.05:
             raise
 
 

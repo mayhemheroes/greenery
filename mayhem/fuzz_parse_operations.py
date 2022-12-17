@@ -33,14 +33,14 @@ def TestOneInput(data):
                 else:
                     regex_combo -= regex
     except IndexError as e:
-        if random.random() < 0.01:
+        if random.random() > 0.99:
             raise e
         return -1
     except Exception as e:
-        if 'Could not parse' in str(e):
+        if 'Could not parse' in str(e) or 'Invalid mult' in str(e) or 'Minimum' in str(e):
             return -1
-        if random.random() < 0.05:
-            raise
+        if random.random() > 0.99:
+            raise e
         return -1
 
 
